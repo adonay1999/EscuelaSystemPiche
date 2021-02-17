@@ -6,9 +6,9 @@ using EscuelaSystemData.Interfaces;
 
 namespace EscuelaSystem.Data.Interfaces
 {
-    public interface IAlumnoRepository : IRepository<Alumno>
+    public interface IMaestroRepository : IRepository<Maestro>
     {
-        void HInscrito();
+        void HActivo();
 
     }
 }

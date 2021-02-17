@@ -1,0 +1,25 @@
+﻿@page
+@model EscuelaSystem.Web.Pages.EditarMaestroModel
+@{
+}
+
+<form method="post">
+    <input type="hidden" asp-for="Maestro.Id" />
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Maestro.Carnet"></label>
+        <input type="text" class="form-control" asp-for="Maestro.Carnet" placeholder="Ingrese un codigo de Maestro">
+        <span class="text-danger" asp-validation-for="Maestro.Carnet"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Maestro.Docente"></label>
+        <input type="text" class="form-control" asp-for="Maestro.Docente" placeholder="Ingrese una Docente de Maestro">
+        <span class="text-danger" asp-validation-for="Maestro.Docente"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Maestro.Activo"></label>
+        <input type="checkbox" class="form-control" asp-for="Maestro.Activo">
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button> <br />
+    <a asp-page="/Maestros">Regresar a Maestros</a>
+</form>

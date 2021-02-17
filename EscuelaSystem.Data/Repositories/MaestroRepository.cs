@@ -7,18 +7,18 @@ using EscuelaSystem.Models;
 
 namespace EscuelaSystem.Data.Repositories
 {
-    public class AlumnoRepository : Repository<Alumno>, IAlumnoRepository
+    public class MaestroRepository : Repository<Maestro>, IMaestroRepository
     {
         private readonly ApplicationDbContext _db;
-        public AlumnoRepository(ApplicationDbContext db) : base(db)
+        public MaestroRepository(ApplicationDbContext db) : base(db)
         {
 
         }
 
-        public void HInscrito()
+        public void HActivo()
         {
-            var Inscrito = _db.Alumnos.Where(c => c.Inscrito == true).ToList();
-            _db.RemoveRange(Inscrito);
+            var Activo = _db.Maestros.Where(c => c.Activo == true).ToList();
+            _db.RemoveRange(Activo);
             _db.SaveChanges();
         }
     }

@@ -1,0 +1,45 @@
+﻿@page
+@model EscuelaSystem.Web.Pages.AlumnosModel
+@{
+}
+
+<h1>Listado de Alumnos</h1>
+<a class="btn btn-sm btn-success" asp-page="/CrearAlumno">Ingresar Alumno</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>CodigoA</th>
+            <th>Nombre</th>
+            <th>Inscrito</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Alumnos)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.CodigoA</td>
+                <td>@item.Nombre</td>
+                <td>
+                    @if (item.Inscrito)
+                    {
+                        <p>SI</p> }
+                    else
+                    {
+                        <p>NO</p>}
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EditarAlumno" asp-route-id="@item.Id">Editar</a>
+
+                    <a class="btn btn-danger" asp-area="" asp-page="/EliminarAlumno" asp-route-id="@item.Id">Eliminar</a>
+
+                </td>
+            </tr>
+}
+
+    </tbody>
+</table>
